@@ -1,0 +1,30 @@
+.stroke {
+  text-decoration: line-through;
+  text-decoration-color: red;
+  -moz-text-decoration-color: red;
+}
+.table thead tr th{
+  background-color: rgb(193, 204, 204);
+}
+.table tbody tr td{
+  font-style: italic;
+  //background-color: rgb(84, 202, 202);
+}
+.customButton {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 80%;
+  margin-bottom: 2%;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.customButton:hover {
+  background-color: #45a049; /* Darker Green */
+}
