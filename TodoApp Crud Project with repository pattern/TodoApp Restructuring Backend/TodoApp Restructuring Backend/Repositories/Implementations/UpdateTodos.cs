@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using Microsoft.Data.SqlClient;
 using TodoApp_Restructuring_Backend.Models;
 using TodoApp_Restructuring_Backend.Models.DataSet;
 using TodoApp_Restructuring_Backend.Repositories.Interfaces;
@@ -23,10 +22,17 @@ namespace TodoApp_Restructuring_Backend.Repositories.Implementations
 
             using (var connection = this._dbContext.Connection())
             {
-                string query = "UPDATE Demo SET title = @Title, description = @Description,  due_date = GETDATE() WHERE id = @Id";
+                try
+                {
+                    string query = "UPDATE Demo SET title = @Title, description = @Description,  due_date = GETDATE() WHERE id = @Id";
 
-                rowsAffected = connection.Execute(query, todo);
-               
+                    rowsAffected = connection.Execute(query, todo);
+                }
+                catch (Exception ex)
+                {
+                    //Console.WriteLine($"Error: {ex.Message}");
+                    rowsAffected = -1;
+                }
             }
 
             return rowsAffected;

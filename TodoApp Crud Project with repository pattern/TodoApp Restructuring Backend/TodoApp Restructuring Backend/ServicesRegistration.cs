@@ -6,14 +6,14 @@ namespace TodoApp_Restructuring_Backend
 {
     public static class ServicesRegistration
     {
-        public static void AddInfrastructure (this IServiceCollection services)
+        public static void AddInfrastructure(this IServiceCollection services)
         {
 
             services.AddTransient<IGetAllTodos, GetAllTodo>();
             services.AddTransient<IGetAllTodoService, GetAllTodoService>();
 
             services.AddTransient<IGetByIdTodos, GetByIdTodos>();
-            services.AddTransient<IGetByIdTodoService,GetByIdTodoService>();
+            services.AddTransient<IGetByIdTodoService, GetByIdTodoService>();
 
             services.AddTransient<IAddTodos, AddTodos>();
             services.AddTransient<IAddTodoService, AddTodoService>();
@@ -23,6 +23,8 @@ namespace TodoApp_Restructuring_Backend
 
             services.AddTransient<IUpdateTodos, UpdateTodos>();
             services.AddTransient<IUpdateTodoService, UpdateTodoService>();
+
+            services.AddTransient<CleanCityRepository>();
 
         }
     }
